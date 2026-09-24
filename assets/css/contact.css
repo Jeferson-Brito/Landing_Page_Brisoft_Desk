@@ -1,0 +1,819 @@
+/* ==========================================================================
+   Brisoft Desk - Estilos para Tela de Contato e Modal de Captação de Leads
+   ========================================================================== */
+
+:root {
+  --modal-bg-glass: rgba(11, 29, 39, 0.72);
+  --form-border: #d4e3dc;
+  --form-focus: #087f52;
+  --form-focus-glow: rgba(37, 185, 130, 0.22);
+  --form-placeholder: #8ea299;
+}
+
+/* --------------------------------------------------------------------------
+   Estilos Globais do Formulário de Contato
+   -------------------------------------------------------------------------- */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  position: relative;
+  text-align: left;
+}
+
+.form-group label {
+  font-size: 12.5px;
+  font-weight: 600;
+  color: #1a382e;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.form-group label .req {
+  color: #e53e3e;
+  font-weight: 700;
+}
+
+.input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.input-icon {
+  position: absolute;
+  left: 14px;
+  color: #728c82;
+  font-size: 15px;
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+}
+
+.input-icon svg {
+  width: 17px;
+  height: 17px;
+  fill: currentColor;
+}
+
+.form-control {
+  width: 100%;
+  font-family: inherit;
+  font-size: 13.5px;
+  color: var(--ink);
+  background: #ffffff;
+  border: 1.5px solid var(--form-border);
+  border-radius: 10px;
+  padding: 12px 14px 12px 42px;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+  line-height: 1.4;
+}
+
+.form-control::placeholder {
+  color: var(--form-placeholder);
+  font-size: 13px;
+}
+
+.form-control:hover {
+  border-color: #b5ceca;
+}
+
+.form-control:focus {
+  border-color: var(--form-focus);
+  background: #ffffff;
+  box-shadow: 0 0 0 3.5px var(--form-focus-glow);
+}
+
+.form-group.has-error .form-control {
+  border-color: #e53e3e;
+  background: #fff8f8;
+}
+
+.form-group.has-error .form-control:focus {
+  box-shadow: 0 0 0 3px rgba(229, 62, 62, 0.18);
+}
+
+.form-error {
+  font-size: 11px;
+  color: #e53e3e;
+  font-weight: 500;
+  display: none;
+  margin-top: 2px;
+}
+
+.form-group.has-error .form-error {
+  display: block;
+}
+
+/* Select customizado */
+select.form-control {
+  cursor: pointer;
+  appearance: none;
+  -webkit-appearance: none;
+  padding-right: 36px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23455a62' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+  background-size: 14px;
+}
+
+/* Textarea */
+textarea.form-control {
+  resize: vertical;
+  min-height: 82px;
+  padding-top: 12px;
+}
+
+/* Opções em Chips / Pills para Seleções Rápidas */
+.chip-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+  gap: 8px;
+}
+
+.chip-option {
+  position: relative;
+}
+
+.chip-option input[type="radio"] {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.chip-label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 10px;
+  border: 1.5px solid var(--form-border);
+  border-radius: 8px;
+  background: #fbfdfc;
+  color: #3b534b;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.18s ease;
+  user-select: none;
+  text-align: center;
+}
+
+.chip-label:hover {
+  background: #f0f7f4;
+  border-color: #a5c7bc;
+}
+
+.chip-option input[type="radio"]:checked + .chip-label {
+  background: var(--green-soft);
+  border-color: var(--green);
+  color: var(--green-dark);
+  font-weight: 700;
+  box-shadow: 0 2px 6px rgba(8, 127, 82, 0.12);
+}
+
+.chip-option input[type="radio"]:focus-visible + .chip-label {
+  outline: 2px solid var(--green);
+}
+
+/* Checkbox de consentimento */
+.form-consent {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  cursor: pointer;
+  margin-top: 4px;
+}
+
+.form-consent input[type="checkbox"] {
+  width: 17px;
+  height: 17px;
+  accent-color: var(--green);
+  margin-top: 2px;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.form-consent span {
+  font-size: 11.5px;
+  color: #556f66;
+  line-height: 1.45;
+}
+
+/* Botão de Envio do Formulário */
+.btn-submit-lead {
+  width: 100%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 15px 22px;
+  font-size: 14px;
+  font-weight: 700;
+  color: #ffffff;
+  background: linear-gradient(135deg, #098e5c 0%, #066e46 100%);
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  box-shadow: 0 8px 20px -4px rgba(8, 127, 82, 0.42);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-submit-lead:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 26px -4px rgba(8, 127, 82, 0.52);
+  background: linear-gradient(135deg, #0ba068 0%, #07794e 100%);
+}
+
+.btn-submit-lead:active {
+  transform: translateY(0);
+}
+
+.btn-submit-lead svg {
+  width: 20px;
+  height: 20px;
+  fill: currentColor;
+  flex-shrink: 0;
+}
+
+.btn-submit-lead .spinner {
+  display: none;
+  width: 18px;
+  height: 18px;
+  border: 2.5px solid rgba(255, 255, 255, 0.3);
+  border-top-color: #ffffff;
+  border-radius: 50%;
+  animation: spin 0.75s linear infinite;
+}
+
+.btn-submit-lead.loading .spinner {
+  display: inline-block;
+}
+
+.btn-submit-lead.loading .btn-text,
+.btn-submit-lead.loading svg {
+  display: none;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.form-privacy-note {
+  font-size: 11px;
+  color: #7b948c;
+  text-align: center;
+  margin-top: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+.form-privacy-note svg {
+  width: 13px;
+  height: 13px;
+  fill: currentColor;
+}
+
+/* Estado de Sucesso */
+.form-success-card {
+  display: none;
+  text-align: center;
+  padding: 30px 20px;
+  animation: successScale 0.4s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@keyframes successScale {
+  from {
+    opacity: 0;
+    transform: scale(0.94);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.success-icon-wrap {
+  width: 68px;
+  height: 68px;
+  border-radius: 50%;
+  background: #e6f8ef;
+  color: #087f52;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 18px;
+  box-shadow: 0 0 0 10px rgba(37, 185, 130, 0.12);
+}
+
+.success-icon-wrap svg {
+  width: 34px;
+  height: 34px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 3;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.form-success-card h3 {
+  font-size: 22px;
+  color: #0b1d27;
+  margin: 0 0 8px;
+  font-weight: 800;
+}
+
+.form-success-card p {
+  color: #556c64;
+  font-size: 13.5px;
+  line-height: 1.55;
+  margin: 0 auto 22px;
+  max-width: 440px;
+}
+
+.success-data-summary {
+  background: #f4f9f6;
+  border: 1px solid #dbeae2;
+  border-radius: 10px;
+  padding: 14px 18px;
+  text-align: left;
+  font-size: 12px;
+  color: #3b554b;
+  margin-bottom: 22px;
+}
+
+.success-data-summary div {
+  margin-bottom: 4px;
+}
+.success-data-summary div:last-child {
+  margin-bottom: 0;
+}
+
+.success-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.btn-open-wa {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 14px 20px;
+  font-size: 13.5px;
+  font-weight: 700;
+  color: #fff;
+  background: #25d366;
+  border-radius: 8px;
+  text-decoration: none;
+  box-shadow: 0 6px 18px rgba(37, 211, 102, 0.4);
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.btn-open-wa:hover {
+  background: #20ba59;
+  transform: translateY(-2px);
+}
+
+.btn-open-wa svg {
+  width: 20px;
+  height: 20px;
+  fill: #fff;
+}
+
+.btn-reset-form {
+  background: transparent;
+  border: 1px solid #d2e2db;
+  color: #4b665c;
+  padding: 10px 16px;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-reset-form:hover {
+  background: #edf5f1;
+  color: #193a2e;
+}
+
+
+/* --------------------------------------------------------------------------
+   Modal Interativo na Landing Page
+   -------------------------------------------------------------------------- */
+.contact-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: var(--modal-bg-glass);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 16px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.3s;
+}
+
+.contact-modal-backdrop.is-open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.contact-modal-dialog {
+  background: #ffffff;
+  border-radius: 20px;
+  width: 100%;
+  max-width: 680px;
+  max-height: 92vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  box-shadow: 0 25px 60px -15px rgba(3, 29, 21, 0.4),
+              0 0 0 1px rgba(220, 231, 228, 0.8);
+  transform: translateY(24px) scale(0.96);
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+}
+
+.contact-modal-backdrop.is-open .contact-modal-dialog {
+  transform: translateY(0) scale(1);
+}
+
+.contact-modal-header {
+  padding: 22px 28px 16px;
+  background: linear-gradient(180deg, #f7fbf9 0%, #ffffff 100%);
+  border-bottom: 1px solid #edf4f1;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  flex-shrink: 0;
+}
+
+.contact-modal-title-group .badge-lead {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  color: var(--green);
+  background: #e4f7ed;
+  padding: 3px 8px;
+  border-radius: 999px;
+  margin-bottom: 6px;
+}
+
+.contact-modal-title-group .badge-lead::before {
+  content: "";
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #25b982;
+  box-shadow: 0 0 0 2px rgba(37, 185, 130, 0.3);
+}
+
+.contact-modal-title-group h2 {
+  font-size: 20px;
+  font-weight: 800;
+  color: #0b1d27;
+  margin: 0 0 4px;
+  letter-spacing: -0.02em;
+}
+
+.contact-modal-title-group p {
+  font-size: 12.5px;
+  color: #637972;
+  margin: 0;
+}
+
+.contact-modal-close {
+  background: #f0f6f3;
+  border: none;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #556c64;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: background 0.18s, color 0.18s, transform 0.18s;
+}
+
+.contact-modal-close:hover {
+  background: #e2ede8;
+  color: #0b1d27;
+  transform: scale(1.08);
+}
+
+.contact-modal-close svg {
+  width: 18px;
+  height: 18px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2.2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.contact-modal-body {
+  padding: 22px 28px 28px;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+
+.contact-modal-footer-note {
+  margin-top: 14px;
+  padding-top: 12px;
+  border-top: 1px dashed #e2ece7;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 11.5px;
+  color: #6a827a;
+}
+
+.contact-modal-footer-note a {
+  color: var(--green);
+  text-decoration: underline;
+  font-weight: 600;
+}
+
+.contact-modal-footer-note a:hover {
+  color: var(--green-dark);
+}
+
+
+/* --------------------------------------------------------------------------
+   Estilos da Página Dedicada: contato.html
+   -------------------------------------------------------------------------- */
+.contact-page-wrapper {
+  background: linear-gradient(180deg, #f5fbf8 0%, #ffffff 420px);
+  padding: 44px 0 80px;
+  min-height: calc(100vh - 76px - 300px);
+}
+
+.contact-grid-layout {
+  display: grid;
+  grid-template-columns: 1fr 1.12fr;
+  gap: 54px;
+  align-items: start;
+}
+
+/* Coluna de Informações / Persuasão */
+.contact-info-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.contact-info-panel .eyebrow {
+  margin-bottom: 0;
+}
+
+.contact-hero-title {
+  font-size: clamp(30px, 3.2vw, 42px);
+  font-weight: 800;
+  line-height: 1.14;
+  letter-spacing: -0.04em;
+  color: #0b1d27;
+  margin: 0;
+}
+
+.contact-hero-title em {
+  font-style: normal;
+  color: var(--green);
+  position: relative;
+}
+
+.contact-hero-desc {
+  font-size: 15px;
+  line-height: 1.6;
+  color: #4b665c;
+  margin: 0;
+}
+
+/* Cards de Benefícios */
+.contact-benefits {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.benefit-item {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  padding: 14px 16px;
+  background: #ffffff;
+  border: 1px solid #e3ece8;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(9, 44, 34, 0.03);
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.benefit-item:hover {
+  transform: translateX(4px);
+  border-color: #bedacf;
+}
+
+.benefit-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  background: #eaf8f1;
+  color: var(--green);
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+}
+
+.benefit-icon svg {
+  width: 19px;
+  height: 19px;
+  fill: currentColor;
+}
+
+.benefit-content h4 {
+  margin: 0 0 3px;
+  font-size: 13.5px;
+  font-weight: 700;
+  color: #122c22;
+}
+
+.benefit-content p {
+  margin: 0;
+  font-size: 12px;
+  color: #5d756d;
+  line-height: 1.45;
+}
+
+/* Caixa de Contato Direto */
+.direct-channels-card {
+  padding: 20px 22px;
+  border-radius: 14px;
+  background: #0d2836;
+  color: #ffffff;
+  box-shadow: 0 12px 28px -6px rgba(10, 29, 43, 0.35);
+}
+
+.direct-channels-card h4 {
+  margin: 0 0 6px;
+  font-size: 14px;
+  font-weight: 700;
+  color: #7ce2b8;
+  letter-spacing: 0.02em;
+}
+
+.direct-channels-card p {
+  margin: 0 0 16px;
+  font-size: 12px;
+  color: #a4beba;
+  line-height: 1.45;
+}
+
+.direct-channels-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.direct-channel-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 12.5px;
+  font-weight: 600;
+  padding: 8px 12px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 8px;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.direct-channel-item:hover {
+  background: rgba(255, 255, 255, 0.16);
+  transform: translateX(3px);
+}
+
+.direct-channel-item svg {
+  width: 17px;
+  height: 17px;
+  fill: #69d4a6;
+  flex-shrink: 0;
+}
+
+/* Coluna do Formulário na Página */
+.contact-form-container {
+  background: #ffffff;
+  border: 1px solid #dce8e3;
+  border-radius: 20px;
+  padding: 34px 36px;
+  box-shadow: 0 18px 45px -8px rgba(9, 42, 32, 0.08),
+              0 2px 8px rgba(9, 42, 32, 0.03);
+  position: relative;
+}
+
+.form-header-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 10.5px;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  color: var(--green);
+  background: #e6f7ef;
+  padding: 4px 10px;
+  border-radius: 999px;
+  margin-bottom: 12px;
+}
+
+.contact-form-container h3 {
+  font-size: 22px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: #0b1d27;
+  margin: 0 0 6px;
+}
+
+.contact-form-container > p {
+  font-size: 13px;
+  color: #556c64;
+  margin: 0 0 24px;
+}
+
+
+/* --------------------------------------------------------------------------
+   Responsividade
+   -------------------------------------------------------------------------- */
+@media (max-width: 960px) {
+  .contact-grid-layout {
+    grid-template-columns: 1fr;
+    gap: 38px;
+  }
+
+  .contact-page-wrapper {
+    padding: 30px 0 60px;
+  }
+
+  .contact-form-container {
+    padding: 26px 22px;
+  }
+}
+
+@media (max-width: 640px) {
+  .form-row {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .contact-modal-header {
+    padding: 18px 20px 14px;
+  }
+
+  .contact-modal-body {
+    padding: 18px 20px 24px;
+  }
+
+  .contact-modal-title-group h2 {
+    font-size: 18px;
+  }
+
+  .chip-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .btn-submit-lead {
+    font-size: 13.5px;
+    padding: 14px 18px;
+  }
+}
