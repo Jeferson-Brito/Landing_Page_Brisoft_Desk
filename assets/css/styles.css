@@ -129,6 +129,9 @@ a {
 .main-nav a:hover {
   transform: translateY(-1px);
 }
+.nav-mobile-actions {
+  display: none;
+}
 .header-actions {
   margin-left: auto;
   display: flex;
@@ -2418,16 +2421,50 @@ h2 em {
   .site-header {
     height: 66px;
     padding: 0 16px;
+    display: flex;
+    align-items: center;
+  }
+  .brand {
+    order: 1;
   }
   .brand img {
     width: 96px;
+  }
+  .header-actions {
+    display: flex;
+    order: 2;
+    margin-left: auto;
+    margin-right: 8px;
+    align-items: center;
+    gap: 8px;
+  }
+  .header-actions .button {
+    display: none;
+  }
+  .header-actions .login-link {
+    display: inline-flex;
+    align-items: center;
+    padding: 7px 13px;
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--green);
+    background: #e8f7f0;
+    border: 1px solid #c9ecdd;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: background 0.2s, color 0.2s;
+  }
+  .header-actions .login-link:hover {
+    background: #d4f2e3;
+    color: #056440;
   }
   .menu-toggle {
     display: flex;
     flex-direction: column;
     gap: 5px;
-    width: 31px;
-    margin-left: auto;
+    width: 32px;
+    order: 3;
+    margin-left: 0;
     padding: 7px;
     border: 0;
     background: transparent;
@@ -2446,11 +2483,12 @@ h2 em {
     flex-direction: column;
     gap: 0;
     margin: 0;
-    padding: 7px;
+    padding: 10px 8px;
     border: 1px solid var(--line);
-    border-radius: 10px;
+    border-radius: 12px;
     background: #fff;
     box-shadow: 0 12px 30px rgba(4, 45, 32, 0.12);
+    z-index: 100;
   }
   .main-nav.open {
     display: flex;
@@ -2458,8 +2496,19 @@ h2 em {
   .main-nav a {
     padding: 11px;
   }
-  .header-actions {
-    display: none;
+  .nav-mobile-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 8px;
+    padding-top: 10px;
+    border-top: 1px solid var(--line);
+  }
+  .nav-mobile-actions a {
+    text-align: center;
+    justify-content: center;
+    padding: 11px 14px !important;
+    border-radius: 8px;
   }
   .hero {
     min-height: auto;
