@@ -124,3 +124,31 @@ customFeatures.forEach((feature) =>
   feature.addEventListener("change", updateCustomPlan),
 );
 updateCustomPlan();
+
+// FAQ Accordion
+const faqItems = document.querySelectorAll(".faq-item");
+faqItems.forEach((item) => {
+  const questionBtn = item.querySelector(".faq-question");
+  questionBtn?.addEventListener("click", () => {
+    const isOpen = item.classList.contains("open");
+    faqItems.forEach((other) => {
+      other.classList.remove("open");
+      other
+        .querySelector(".faq-question")
+        ?.setAttribute("aria-expanded", "false");
+    });
+    if (!isOpen) {
+      item.classList.add("open");
+      questionBtn.setAttribute("aria-expanded", "true");
+    }
+  });
+});
+
+// A11y: close mobile nav on Escape
+window.addEventListener("keydown", (e) => {
+  if (e.key === "Escape" && nav?.classList.contains("open")) {
+    nav.classList.remove("open");
+    menuToggle?.setAttribute("aria-expanded", "false");
+    menuToggle?.focus();
+  }
+});

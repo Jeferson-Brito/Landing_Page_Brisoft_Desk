@@ -5,9 +5,116 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Brisoft Desk: central de atendimento via WhatsApp para organizar equipes, filas e indicadores em um só lugar."
+      content="Brisoft Desk: central de atendimento via WhatsApp para organizar múltiplos números, equipes, filas e indicadores em um só lugar."
     />
     <title>Brisoft Desk | Atendimento via WhatsApp, organizado</title>
+    <link rel="icon" type="image/png" href="assets/images/logo_tema_claro.png" />
+
+    <!-- Open Graph / WhatsApp / Facebook / LinkedIn -->
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="pt_BR" />
+    <meta property="og:site_name" content="Brisoft Desk" />
+    <meta property="og:title" content="Brisoft Desk | Central de Atendimento via WhatsApp" />
+    <meta
+      property="og:description"
+      content="Centralize múltiplos números de WhatsApp, equipes, filas e métricas de atendimento em uma única plataforma profissional."
+    />
+    <meta property="og:url" content="https://desk.brisoft.com.br/" />
+    <meta property="og:image" content="assets/images/logo_tema_claro.png" />
+
+    <!-- Twitter Cards -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Brisoft Desk | Atendimento via WhatsApp, organizado" />
+    <meta
+      name="twitter:description"
+      content="Centralize conversas, equipes e números de WhatsApp em uma operação com filas, automações e indicadores."
+    />
+    <meta name="twitter:image" content="assets/images/logo_tema_claro.png" />
+
+    <!-- Schema.org JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "SoftwareApplication",
+          "name": "Brisoft Desk",
+          "applicationCategory": "BusinessApplication",
+          "operatingSystem": "Web",
+          "offers": {
+            "@type": "AggregateOffer",
+            "priceCurrency": "BRL",
+            "lowPrice": "0.00",
+            "highPrice": "149.90",
+            "offerCount": "3"
+          },
+          "description": "Central de atendimento via WhatsApp para organizar múltiplos números, filas por departamento, automações e métricas de gestão."
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "Preciso deixar o celular conectado à internet ou na tomada o tempo todo?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Não! Após escanear o QR Code para conectar seu WhatsApp à plataforma, o Brisoft Desk roda 100% em nuvem de forma autônoma. Você e toda a sua equipe atendem direto pelo navegador web no computador, sem depender da bateria, do sinal de internet ou do aparelho celular físico estar ligado."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Posso conectar múltiplos números de WhatsApp e transferir entre setores?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Sim! Você pode conectar quantas contas de WhatsApp sua operação precisar. O Brisoft Desk permite organizar filas por departamentos coloridos (Comercial, Suporte, Financeiro, etc.) e transferir atendimentos entre setores ou atendentes com notas internas em apenas 1 clique."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "O que é e como funciona o Painel TV (Gestão à Vista)?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "O Painel TV é uma tela exclusiva em modo escuro desenvolvida para ser exibida em TVs ou monitores na parede da empresa. Ela mostra a fila em tempo real (quem está aguardando e em atendimento), métricas de TME e TMA, status dos atendentes e emite alertas sonoros quando novas mensagens chegam."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "O que o Chatbot com triagem automática consegue fazer?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "O bot solicita e valida o nome de clientes desconhecidos antes do atendimento, apresenta menu interativo de setores (reconhecendo números e nomes digitados), detecta palavras como 'humano' ou 'cancelar' e oferece retomada automática caso o cliente tenha sido atendido recentemente nas últimas 24h."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Como funciona a Pesquisa de Satisfação (Avaliações)?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Ao finalizar um chamado, o sistema envia automaticamente uma mensagem pelo WhatsApp solicitando uma nota de 1 a 5 estrelas. Os gestores acompanham o índice de satisfação (CSAT), as avaliações e os comentários detalhados na tela de Desempenho por equipe e atendente."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Quais ferramentas exclusivas o atendente tem direto no chat?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "O Brisoft Desk possui uma barra lateral de ferramentas integrada: Bloco de Notas (com abas para anotações rápidas por chamado), Validador & Formatador de CPF/CNPJ (com cópia limpa em 1 clique) e Calculadora rápida, sem que o colaborador precise sair da tela do atendimento."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Como funciona o teste grátis de 7 dias e o cancelamento?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "No plano Essencial, você experimenta a plataforma completa com sua equipe por 7 dias inteiramente grátis. Não há taxas de adesão nem multas rescisórias: você tem total liberdade para cancelar a qualquer momento sem burocracia."
+              }
+            }
+          ]
+        }
+      ]
+    }
+    </script>
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -27,14 +134,10 @@
       <nav class="main-nav" aria-label="Navegação principal">
         <a href="#produto">Produto</a><a href="#recursos">Recursos</a
         ><a href="#planos">Planos</a><a href="#operacao">Operação</a
-        ><a href="#contato">Contato</a>
+        ><a href="#faq">Dúvidas</a><a href="#contato">Contato</a>
       </nav>
       <div class="header-actions">
-        <a
-          class="login-link"
-          href="https://desk.brisoft.com.br/login"
-          target="_blank"
-          rel="noopener noreferrer"
+        <a class="login-link" href="https://desk.brisoft.com.br/login"
           >Entrar</a
         ><a class="button button-small" href="#contato"
           >Falar com a Brisoft <span>→</span></a
@@ -60,21 +163,28 @@
             ><a
               class="button button-outline"
               href="https://desk.brisoft.com.br/login"
-              target="_blank"
-              rel="noopener noreferrer"
               >Acessar plataforma</a
             >
           </div>
           <ul class="proof-list" aria-label="Recursos reais">
-            <li><span>✓</span> Múltiplos números</li>
-            <li><span>✓</span> Fila por departamento</li>
-            <li><span>✓</span> Métricas em tempo real</li>
+            <li><span>✓</span> Múltiplos WhatsApps (QR Code)</li>
+            <li><span>✓</span> Chatbot de Triagem & Identificação</li>
+            <li><span>✓</span> Painel TV & Métricas TME / TMA</li>
           </ul>
         </div>
-        <div class="hero-visual reveal reveal-delay">
+        <div class="hero-visual reveal reveal-delay" aria-hidden="true">
           <div class="window dashboard-window">
             <div class="window-bar">
-              <i></i><i></i><i></i><b>brisoft-desk / operação</b>
+              <div class="window-dots">
+                <i class="dot-red"></i>
+                <i class="dot-yellow"></i>
+                <i class="dot-green"></i>
+              </div>
+              <div class="window-address">
+                <span class="lock-icon">🔒</span>
+                <span>desk.brisoft.com.br/atendimento</span>
+              </div>
+              <div class="window-spacer"></div>
             </div>
             <div class="dashboard-layout">
               <aside class="dashboard-sidebar">
@@ -84,141 +194,273 @@
                     alt="Brisoft Desk"
                   />
                 </div>
+                <div class="side-item">
+                  <i class="side-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24">
+                      <path d="M3 13h8V3H3v10zm0 8h8v-6H3v6zm10 0h8V11h-8v10zm0-18v6h8V3h-8z"/>
+                    </svg>
+                  </i>
+                  <span>Dashboard</span>
+                </div>
                 <div class="side-item active">
-                  <i class="side-icon" aria-hidden="true"
-                    ><svg viewBox="0 0 24 24">
-                      <path
-                        d="M7 4h10a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2Zm0 3v3h10V7H7Zm0 5v2h6v-2H7Z"
-                      /></svg></i
-                  ><span>Atendimentos</span>
+                  <i class="side-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24">
+                      <path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H6l-2 2V4h16v12z"/>
+                    </svg>
+                  </i>
+                  <span>Atendimentos</span>
                 </div>
                 <div class="side-item">
-                  <i class="side-icon" aria-hidden="true"
-                    ><svg viewBox="0 0 24 24">
-                      <path
-                        d="M4 4h16v16H4V4Zm3 3v3h3V7H7Zm5 0v3h5V7h-5ZM7 12v5h3v-5H7Zm5 0v5h5v-5h-5Z"
-                      /></svg></i
-                  ><span>Dashboard</span>
+                  <i class="side-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24">
+                      <path d="M13 3a9 9 0 0 0-9 9H1l3.89 3.89.07.14L9 12H6c0-3.87 3.13-7 7-7s7 3.13 7 7-3.13 7-7 7c-1.93 0-3.68-.79-4.94-2.06l-1.42 1.42A8.954 8.954 0 0 0 13 21a9 9 0 0 0 0-18zm-1 5v5l4.28 2.54.72-1.21-3.5-2.08V8H12z"/>
+                    </svg>
+                  </i>
+                  <span>Histórico</span>
                 </div>
                 <div class="side-item">
-                  <i class="side-icon" aria-hidden="true"
-                    ><svg viewBox="0 0 24 24">
-                      <path
-                        d="M12 3a9 9 0 1 0 9 9 9.01 9.01 0 0 0-9-9Zm0 2a7 7 0 1 1-7 7 7.01 7.01 0 0 1 7-7Zm-1 2v5.41l3.3 3.3 1.4-1.42-2.7-2.7V7h-2Z"
-                      /></svg></i
-                  ><span>Histórico</span>
+                  <i class="side-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24">
+                      <path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/>
+                    </svg>
+                  </i>
+                  <span>Contatos</span>
                 </div>
                 <div class="side-item">
-                  <i class="side-icon" aria-hidden="true"
-                    ><svg viewBox="0 0 24 24">
-                      <path
-                        d="M12 3a5 5 0 0 1 5 5c0 1.7-.85 3.2-2.15 4.1A7 7 0 0 1 19 18v2H5v-2a7 7 0 0 1 4.15-5.9A5 5 0 0 1 12 3Zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6ZM12 13a5 5 0 0 0-4.9 4h9.8a5 5 0 0 0-4.9-4Z"
-                      /></svg></i
-                  ><span>Contatos</span>
+                  <i class="side-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24">
+                      <path d="M7 2v11h3v9l7-12h-4l4-8H7z"/>
+                    </svg>
+                  </i>
+                  <span>Mensagens rápidas</span>
                 </div>
-                <div class="agent">
-                  <span class="avatar"></span
-                  ><small>Equipe conectada<br /><b>Operação ao vivo</b></small>
+                <div class="side-item">
+                  <i class="side-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24">
+                      <path d="M16 6l2.29 2.29-4.88 4.88-4-4L2 16.59 3.41 18l6-6 4 4 6.3-6.29L22 12V6z"/>
+                    </svg>
+                  </i>
+                  <span>Desempenho</span>
+                </div>
+                <div class="side-item">
+                  <i class="side-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24">
+                      <path d="M19.14 12.94c.04-.3.06-.61.06-.94 0-.32-.02-.64-.07-.94l2.03-1.58c.18-.14.23-.41.12-.61l-1.92-3.32c-.12-.22-.37-.29-.59-.22l-2.39.96c-.5-.38-1.03-.7-1.62-.94l-.36-2.54c-.04-.24-.24-.41-.48-.41h-3.84c-.24 0-.43.17-.47.41l-.36 2.54c-.59.24-1.13.57-1.62.94l-2.39-.96c-.22-.08-.47 0-.59.22L2.74 8.87c-.12.21-.08.47.12.61l2.03 1.58c-.05.3-.09.63-.09.94s.02.64.07.94l-2.03 1.58c-.18.14-.23.41-.12.61l1.92 3.32c.12.22.37.29.59.22l2.39-.96c.5.38 1.03.7 1.62.94l.36 2.54c.05.24.24.41.48.41h3.84c.24 0 .44-.17.47-.41l.36-2.54c.59-.24 1.13-.56 1.62-.94l2.39.96c.22.08.47 0 .59-.22l1.92-3.32c.12-.22.07-.47-.12-.61l-2.01-1.58zM12 15.6c-1.98 0-3.6-1.62-3.6-3.6s1.62-3.6 3.6-3.6 3.6 1.62 3.6 3.6-1.62 3.6-3.6 3.6z"/>
+                    </svg>
+                  </i>
+                  <span>Configurações</span>
+                </div>
+                <div class="sidebar-user">
+                  <div class="user-avatar-wrap">
+                    <img
+                      src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=80&h=80&q=80"
+                      alt="Lucas Silva"
+                      class="user-avatar-photo"
+                      onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';"
+                    />
+                    <span class="user-avatar-fallback">LS</span>
+                    <span class="user-status-dot"></span>
+                  </div>
+                  <div class="user-info">
+                    <strong class="user-name">Lucas Silva</strong>
+                    <span class="user-role">Atendente</span>
+                  </div>
                 </div>
               </aside>
               <aside class="inbox-queue">
                 <div class="queue-heading">
-                  <strong>Fila de Atendimento</strong><span>6</span>
+                  <strong>Fila de Atendimento</strong><span>5</span>
                 </div>
                 <div class="queue-tabs">
-                  <b>Aguardando 3</b><span>Em atend. 3</span>
+                  <span class="tab-item">Aguardando (2)</span>
+                  <span class="tab-item">Grupos</span>
+                  <span class="tab-item tab-active">Em atendimento (5)</span>
                 </div>
-                <div class="queue-search">⌕ Buscar atendimento...</div>
+                <div class="queue-search">
+                  <span>🔍</span> Buscar conversa...
+                </div>
                 <div class="queue-chat active">
-                  <i class="fake-avatar avatar-a">AC</i
-                  ><span
-                    ><strong>Atendimento Comercial</strong
-                    ><small>Preciso de ajuda com...</small></span
-                  ><b>agora</b>
+                  <div class="client-avatar">
+                    <img
+                      src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=80&h=80&q=80"
+                      alt="Carlos Mendes"
+                      onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';"
+                    />
+                    <span class="avatar-fallback avatar-a">CM</span>
+                  </div>
+                  <span>
+                    <strong>Carlos Mendes</strong>
+                    <small>Preciso de ajuda com os planos...</small>
+                  </span>
+                  <b>agora</b>
                 </div>
                 <div class="queue-chat">
-                  <i class="fake-avatar avatar-b">MS</i
-                  ><span
-                    ><strong>Marina Souza</strong
-                    ><small>Enviei os documentos</small></span
-                  ><b>2m</b>
+                  <div class="client-avatar">
+                    <img
+                      src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=80&h=80&q=80"
+                      alt="Marina Souza"
+                      onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';"
+                    />
+                    <span class="avatar-fallback avatar-b">MS</span>
+                  </div>
+                  <span>
+                    <strong>Marina Souza</strong>
+                    <small>Enviei os documentos da empresa</small>
+                  </span>
+                  <b>2m</b>
                 </div>
                 <div class="queue-chat">
-                  <i class="fake-avatar avatar-c">PL</i
-                  ><span
-                    ><strong>Paulo Lima</strong
-                    ><small>Gostaria de saber mais</small></span
-                  ><b>5m</b>
+                  <div class="client-avatar">
+                    <img
+                      src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=80&h=80&q=80"
+                      alt="Paulo Lima"
+                      onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';"
+                    />
+                    <span class="avatar-fallback avatar-c">PL</span>
+                  </div>
+                  <span>
+                    <strong>Paulo Lima</strong>
+                    <small>Gostaria de agendar uma demo</small>
+                  </span>
+                  <b>5m</b>
                 </div>
                 <div class="queue-chat">
-                  <i class="fake-avatar avatar-d">EC</i
-                  ><span
-                    ><strong>Equipe Central</strong
-                    ><small>Nova solicitação recebida</small></span
-                  ><b>8m</b>
+                  <div class="client-avatar">
+                    <img
+                      src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=80&h=80&q=80"
+                      alt="Eduardo Costa"
+                      onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';"
+                    />
+                    <span class="avatar-fallback avatar-d">EC</span>
+                  </div>
+                  <span>
+                    <strong>Eduardo Costa</strong>
+                    <small>Nova solicitação recebida</small>
+                  </span>
+                  <b>8m</b>
                 </div>
                 <div class="queue-chat">
-                  <i class="fake-avatar avatar-e">RN</i
-                  ><span
-                    ><strong>Renata Nunes</strong
-                    ><small>Obrigada pelo retorno!</small></span
-                  ><b>12m</b>
-                </div>
-                <div class="queue-chat">
-                  <i class="fake-avatar avatar-f">GF</i
-                  ><span
-                    ><strong>Grupo Financeiro</strong
-                    ><small>Mensagem encaminhada</small></span
-                  ><b>18m</b>
+                  <div class="client-avatar">
+                    <img
+                      src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=80&h=80&q=80"
+                      alt="Renata Nunes"
+                      onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';"
+                    />
+                    <span class="avatar-fallback avatar-e">RN</span>
+                  </div>
+                  <span>
+                    <strong>Renata Nunes</strong>
+                    <small>Obrigada pelo retorno rápido!</small>
+                  </span>
+                  <b>12m</b>
                 </div>
               </aside>
               <div class="dashboard-main inbox-main">
                 <div class="chat-contact-header">
-                  <i class="fake-avatar avatar-a">AC</i>
-                  <div>
-                    <strong>Atendimento Comercial</strong
-                    ><small>● Comercial · em atendimento</small>
+                  <div class="chat-contact-profile">
+                    <div class="client-avatar">
+                      <img
+                        src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=80&h=80&q=80"
+                        alt="Carlos Mendes"
+                        onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';"
+                      />
+                      <span class="avatar-fallback avatar-a">CM</span>
+                    </div>
+                    <div>
+                      <strong>Carlos Mendes</strong>
+                      <small><span class="online-tag"></span>Comercial · em atendimento</small>
+                    </div>
                   </div>
-                  <button type="button">Assumir</button>
+                  <div class="chat-header-actions">
+                    <button type="button" class="chat-tool-btn" title="Bloco de Notas" aria-label="Bloco de Notas">
+                      <svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-2 10H7v-2h10v2zm0-4H7V7h10v2z"/></svg>
+                    </button>
+                    <button type="button" class="chat-tool-btn" title="Validador CPF/CNPJ" aria-label="Validador CPF/CNPJ">
+                      <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.11 0-1.99.89-1.99 2L2 18c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V6c0-1.11-.89-2-2-2zm-8 2c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm6 12H6v-1c0-2 4-3.1 6-3.1s6 1.1 6 3.1v1z"/></svg>
+                    </button>
+                    <button type="button" class="chat-tool-btn" title="Painel TV (Gestão à Vista)" aria-label="Painel TV">
+                      <svg viewBox="0 0 24 24"><path d="M21 3H3c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h5v2h8v-2h5c1.1 0 1.99-.9 1.99-2L23 5c0-1.1-.9-2-2-2zm0 14H3V5h18v12z"/></svg>
+                    </button>
+                  </div>
                 </div>
-                <div class="chat-date">Hoje</div>
+                <div class="chat-date"><span>Hoje, 14:08</span></div>
                 <div class="chat-message received">
-                  Olá! Gostaria de conhecer melhor a plataforma.<small
-                    >14:08</small
-                  >
-                </div>
-                <div class="chat-message sent">
-                  Claro! Vou te mostrar como funciona.<small>14:08 ✓✓</small>
+                  Olá! Gostaria de falar com o atendimento da empresa.<small>14:08</small>
                 </div>
                 <div class="chat-message bot">
-                  <b>Assistente Virtual · BOT</b>Olá! Como podemos ajudar sua
-                  empresa hoje?<small>14:09 ✓✓</small>
+                  <div class="bot-badge">🤖 BOT DE TRIAGEM</div>
+                  Olá! 👋 Antes de continuar, <strong>qual é o seu nome?</strong><small>14:08 ✓✓</small>
                 </div>
                 <div class="chat-message received">
-                  Preciso organizar os atendimentos da equipe.<small
-                    >14:10</small
-                  >
+                  Carlos Mendes<small>14:08</small>
+                </div>
+                <div class="chat-message bot">
+                  <div class="bot-badge">🤖 BOT DE TRIAGEM</div>
+                  ✅ Obrigado, <strong>Carlos</strong>! Encaminhando para <strong>Comercial</strong>...<small>14:09 ✓✓</small>
                 </div>
                 <div class="chat-message sent">
-                  Perfeito. Vou encaminhar para um especialista.<small
-                    >14:10 ✓✓</small
-                  >
+                  Olá Carlos! Lucas da equipe comercial aqui. Como posso ajudar com a sua operação?<small>14:09 ✓✓</small>
                 </div>
-                <div class="chat-composer">Digite uma mensagem... <b>➤</b></div>
+                <div class="chat-composer">
+                  <span>Digite uma resposta rápida...</span>
+                  <b>➤</b>
+                </div>
               </div>
             </div>
           </div>
           <div class="phone-card">
-            <div class="phone-notch"></div>
-            <div class="phone-top">
-              <span class="avatar"></span
-              ><b>WhatsApp <small>● conectado</small></b
-              ><span>⋮</span>
+            <div class="phone-screen">
+              <div class="phone-status-bar">
+                <span class="phone-clock">09:41</span>
+                <div class="phone-island"></div>
+                <div class="phone-signals">
+                  <span>📶</span>
+                  <span>🔋</span>
+                </div>
+              </div>
+              <div class="phone-top">
+                <div class="phone-contact">
+                  <span class="phone-back">‹</span>
+                  <div class="phone-contact-avatar">
+                    <img src="assets/images/logo_tema_claro.png" alt="Brisoft Desk" />
+                  </div>
+                  <div class="phone-contact-info">
+                    <b>Brisoft Desk <span class="verified-badge">✓</span></b>
+                    <small>Conta Comercial Oficial</small>
+                  </div>
+                </div>
+                <div class="phone-top-actions">
+                  <span>📞</span>
+                  <span>⋮</span>
+                </div>
+              </div>
+              <div class="phone-chat-body">
+                <div class="phone-date-pill">Hoje</div>
+                <div class="phone-bubble received">
+                  Olá! Gostaria de atendimento.<small>09:40</small>
+                </div>
+                <div class="phone-bubble sent">
+                  Olá! 👋 Qual é o seu <strong>nome?</strong><small>09:40 <span class="checks">✓✓</span></small>
+                </div>
+                <div class="phone-bubble received">
+                  Carlos Mendes<small>09:41</small>
+                </div>
+                <div class="phone-bubble sent">
+                  ✅ Obrigado, Carlos! Fila: <strong>Comercial</strong>.<small>09:41 <span class="checks">✓✓</span></small>
+                </div>
+                <div class="phone-notify-pill">
+                  <span>🔒 Atendimento criptografado</span>
+                </div>
+              </div>
+              <div class="phone-input-bar">
+                <div class="phone-input-box">
+                  <span>😊</span>
+                  <span class="placeholder">Mensagem...</span>
+                  <span>📎</span>
+                </div>
+                <div class="phone-mic-btn">🎙️</div>
+              </div>
             </div>
-            <p>Mensagem recebida no número da empresa.</p>
-            <strong>Atendimento encaminhado para Comercial.</strong>
-            <p class="reply">Fila e histórico atualizados.</p>
-            <div class="message-bar">Responder <span>➤</span></div>
             <div class="phone-home"></div>
           </div>
         </div>
@@ -226,8 +468,8 @@
 
       <section class="trust-strip">
         <div class="section-shell">
-          <span>Feito para operações que atendem pelo WhatsApp</span
-          ><b>Equipes</b><b>Departamentos</b><b>Filas</b><b>Indicadores</b>
+          <span>Feito para operações reais de atendimento no WhatsApp</span
+          ><b>Multiatendente</b><b>Chatbot de Triagem</b><b>Painel TV</b><b>Pesquisa CSAT</b><b>Validador CPF/CNPJ</b>
         </div>
       </section>
 
@@ -235,36 +477,33 @@
         <div class="center-heading reveal">
           <p class="eyebrow center"><span></span> O PRODUTO</p>
           <h2>
-            Do primeiro contato ao indicador,<br /><em>tudo no mesmo fluxo.</em>
+            Do primeiro "olá" ao indicador de gestão,<br /><em>tudo em uma só central.</em>
           </h2>
           <p>
-            Uma central operacional para sua equipe atender melhor e para a
-            gestão enxergar o que está acontecendo.
+            Conecte múltiplos WhatsApps via QR Code, automatize a triagem com chatbot inteligente e acompanhe o ritmo da sua equipe ao vivo no computador e em telões corporativos.
           </p>
         </div>
         <div class="solution-feature reveal">
           <div class="feature-copy">
-            <span class="product-tag">● Produto principal da Brisoft</span>
+            <span class="product-tag">● Plataforma Oficial Brisoft</span>
             <div class="product-title">
               <span class="product-icon">◔</span>
               <div>
                 <h3>Brisoft Desk</h3>
-                <small>Central de atendimento via WhatsApp</small>
+                <small>Central Operacional via WhatsApp</small>
               </div>
             </div>
             <p>
-              Conecte números de WhatsApp, organize a distribuição por
-              departamento e acompanhe cada atendimento sem depender de
-              planilhas ou conversas espalhadas.
+              Chega de celulares passando de mão em mão. O Brisoft Desk organiza filas de atendimento por departamento, captura o nome do cliente automaticamente, avalia a satisfação com estrelas e oferece ferramentas essenciais como Bloco de Notas e Validador de CPF/CNPJ integrados à conversa.
             </p>
-            <a class="button" href="#recursos">Ver recursos <span>→</span></a>
+            <a class="button" href="#recursos">Ver todos os recursos <span>→</span></a>
           </div>
           <div class="feature-points">
-            <span>✓ Múltiplas contas WhatsApp</span
-            ><span>✓ Filas por departamento</span><span>✓ Bot configurável</span
-            ><span>✓ Histórico do cliente</span><span>✓ TME, TMA e SLA</span
-            ><span>✓ Painel TV ao vivo</span><span>✓ Chat interno</span
-            ><span>✓ Mídia protegida</span>
+            <span>✓ Múltiplos WhatsApps (QR Code)</span
+            ><span>✓ Chatbot de Triagem & Nome</span><span>✓ Roteamento por Setor</span
+            ><span>✓ Painel TV (Gestão à Vista)</span><span>✓ Pesquisa CSAT 1 a 5 estrelas</span
+            ><span>✓ Validador CPF/CNPJ & Notas</span><span>✓ Mensagens Rápidas com Mídia</span
+            ><span>✓ Métricas TME, TMA e SLA</span>
           </div>
           <div class="feature-screen">
             <div class="window compact-window">
@@ -276,15 +515,15 @@
                   <p>Atendimentos</p>
                   <p>Histórico</p>
                   <p>Contatos</p>
-                  <p>Configurações</p>
+                  <p>Desempenho</p>
                 </div>
                 <div class="compact-main">
-                  <strong>Fila de atendimento</strong
+                  <strong>Central Operacional</strong
                   ><small>Comercial · Suporte · Financeiro</small>
                   <div class="compact-stats">
-                    <b>Ao vivo<small>WhatsApp conectado</small></b
-                    ><b>Por setor<small>Roteamento organizado</small></b
-                    ><b>SLA<small>Gestão acompanhada</small></b>
+                    <b>Ao vivo<small>WhatsApp em Nuvem</small></b
+                    ><b>Fila Ativa<small>Triagem com Bot</small></b
+                    ><b>Painel TV<small>Gestão à Vista</small></b>
                   </div>
                   <div class="mini-chart">
                     <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
@@ -300,62 +539,54 @@
         <div class="section-shell">
           <div class="split-heading reveal">
             <div>
-              <p class="eyebrow"><span></span> RECURSOS REAIS</p>
-              <h2>Menos improviso.<br /><em>Mais controle.</em></h2>
+              <p class="eyebrow"><span></span> RECURSOS NATIVOS</p>
+              <h2>Construído para a rotina<br /><em>real de atendimento.</em></h2>
             </div>
             <p>
-              O produto foi construído para a rotina de equipes que precisam
-              responder clientes, dividir responsabilidades e acompanhar a
-              operação com clareza.
+              Cada detalhe do Brisoft Desk foi desenhado para eliminar gargalos operacionais: do primeiro contato com bot inteligente até o acompanhamento em tempo real para gestores.
             </p>
           </div>
           <div class="resource-grid reveal">
             <article>
               <span>01</span>
-              <h3>Atendimento centralizado</h3>
+              <h3>Múltiplos WhatsApps em Nuvem</h3>
               <p>
-                Receba e responda textos, imagens, áudios, vídeos e documentos
-                em uma interface única.
+                Conecte seus números facilmente por QR Code. Vários atendentes respondem simultaneamente pelo mesmo número no navegador, sem precisar do aparelho celular físico conectado à tomada.
               </p>
             </article>
             <article>
               <span>02</span>
-              <h3>Roteamento por setor</h3>
+              <h3>Chatbot de Triagem & Identificação</h3>
               <p>
-                Use múltiplos números e direcione conversas para Comercial,
-                Suporte, Financeiro ou outros departamentos.
+                O bot solicita e valida o nome de novos clientes, apresenta menu de departamentos, reconhece palavras como "humano" ou "cancelar" e oferece retorno recente nas últimas 24h.
               </p>
             </article>
             <article>
               <span>03</span>
-              <h3>Bot com regras claras</h3>
+              <h3>Painel TV para Gestão à Vista</h3>
               <p>
-                Configure menu, identificação do cliente, encaminhamento humano
-                e mensagens fora do horário.
+                Modo telão exclusivo em dark mode para exibir na parede da sua empresa: acompanhe fila ao vivo, atendentes em atendimento, TME, TMA e receba alertas sonoros de novas mensagens.
               </p>
             </article>
             <article>
               <span>04</span>
-              <h3>Gestão baseada em dados</h3>
+              <h3>Pesquisa de Satisfação (CSAT)</h3>
               <p>
-                Acompanhe fila, TME, TMA, SLA, produtividade, avaliações e
-                movimento diário.
+                Envio automático de avaliação de 1 a 5 estrelas pelo próprio WhatsApp ao finalizar o chamado. Relatórios completos de desempenho e satisfação por atendente e departamento.
               </p>
             </article>
             <article>
               <span>05</span>
-              <h3>Histórico que ajuda</h3>
+              <h3>Ferramentas no Chat (Dock Lateral)</h3>
               <p>
-                Consulte atendimentos anteriores, dados de contato, notas e o
-                contexto antes de responder.
+                Aumente a velocidade da equipe com Bloco de Notas por atendimento, Validador/Formatador de CPF e CNPJ com cópia em 1 clique e Calculadora rápida sem sair da conversa.
               </p>
             </article>
             <article>
               <span>06</span>
-              <h3>Equipe conectada</h3>
+              <h3>Mensagens Rápidas, Contatos & Histórico</h3>
               <p>
-                Colabore no chat interno, transfira atendimentos e mantenha a
-                operação sincronizada em tempo real.
+                Responda com atalhos de textos e anexos em um clique. Consulte o histórico completo de atendimentos passados, notas internas da equipe e cadastro detalhado de contatos.
               </p>
             </article>
           </div>
@@ -366,32 +597,30 @@
         <div class="operation-card reveal">
           <div class="operation-copy">
             <p class="eyebrow"><span></span> VISIBILIDADE OPERACIONAL</p>
-            <h2>O gestor sabe onde agir.</h2>
+            <h2>O gestor no comando de ponta a ponta.</h2>
             <p>
-              Dashboard, Desempenho e Painel TV mostram o que está acontecendo
-              no atendimento: volume, fila, tempos, SLA, avaliações e desempenho
-              por equipe ou departamento.
+              Dashboard gerencial, Painel TV e Desempenho revelam exatamente onde estão os gargalos: volume de tickets, tempo de fila, velocidade de resposta e satisfação dos seus clientes.
             </p>
             <a class="button" href="#contato"
-              >Falar sobre a operação <span>→</span></a
+              >Falar sobre sua operação <span>→</span></a
             >
           </div>
           <div class="operation-list">
             <div>
-              <strong>Fila</strong
-              ><span>Quem está aguardando e há quanto tempo.</span>
+              <strong>Fila ao Vivo</strong
+              ><span>Monitore chamados aguardando e em atendimento por setor com contagem em tempo real.</span>
             </div>
             <div>
-              <strong>Tempo</strong
-              ><span>TME e TMA para entender a velocidade do atendimento.</span>
+              <strong>TME e TMA</strong
+              ><span>Tempo Médio de Espera e Tempo Médio de Atendimento para garantir velocidade e cumprimento de SLA.</span>
             </div>
             <div>
-              <strong>Qualidade</strong
-              ><span>SLA, satisfação e resolução no mesmo dia.</span>
+              <strong>Satisfação & CSAT</strong
+              ><span>Notas de 1 a 5 estrelas e feedbacks recebidos diretamente pelo WhatsApp dos clientes.</span>
             </div>
             <div>
-              <strong>Presença</strong
-              ><span>Usuários conectados e status dos números.</span>
+              <strong>Painel TV & Presença</strong
+              ><span>Visão em telão de alta visibilidade e acompanhamento de status e usuários conectados.</span>
             </div>
           </div>
         </div>
@@ -442,7 +671,9 @@
             <small class="price-billing">Depois dos 7 dias: R$ 49,90/mês</small>
             <a
               class="button pricing-button"
-              href="mailto:contato@brisoft.com.br?subject=Plano%20Essencial%20Brisoft%20Desk"
+              href="https://buy.stripe.com/test_4gM3coh0P3IWdi6dGfg7e00"
+              target="_blank"
+              rel="noopener noreferrer"
               >Quero este plano <span>→</span></a
             >
             <ul>
@@ -477,7 +708,9 @@
             <small class="price-billing">Cancele quando quiser</small>
             <a
               class="button pricing-button"
-              href="mailto:contato@brisoft.com.br?subject=Plano%20Profissional%20Brisoft%20Desk"
+              href="https://buy.stripe.com/test_00w00c11R7Zca5U6dNg7e01"
+              target="_blank"
+              rel="noopener noreferrer"
               >Quero este plano <span>→</span></a
             >
             <ul>
@@ -513,8 +746,10 @@
             <small class="price-billing">Cancele quando quiser</small>
             <a
               class="button pricing-button"
-              href="mailto:contato@brisoft.com.br?subject=Plano%20Opera%C3%A7%C3%A3o%20Brisoft%20Desk"
-              >Falar com especialista <span>→</span></a
+              href="https://buy.stripe.com/test_bJe3co25V0wKemaeKjg7e02"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Quero este plano <span>→</span></a
             >
             <ul>
               <li>Até 15 números de WhatsApp</li>
@@ -525,12 +760,11 @@
               <li>Histórico e cadastro de contatos</li>
               <li>Mensagens rápidas e chat interno</li>
               <li>Dashboard, TME, TMA e SLA</li>
-              <li>Painel TV e indicadores por equipe</li>
-              <li>Colaboração em atendimentos</li>
+              <li>Painel TV e gestão à vista</li>
+              <li>Colaboração e chat interno entre atendentes</li>
               <li>Indicadores por equipe e setor</li>
-              <li>Colaboração em atendimentos</li>
               <li>Configuração assistida da operação</li>
-              <li>Condições para expansão</li>
+              <li>Condições especiais para expansão</li>
             </ul>
           </article>
           <article class="pricing-card custom-plan">
@@ -699,6 +933,115 @@
         </div>
       </section>
 
+      <section class="faq-section section-shell" id="faq">
+        <div class="faq-heading reveal">
+          <p class="eyebrow center"><span></span> TIRE SUAS DÚVIDAS</p>
+          <h2>Perguntas frequentes sobre<br /><em>o Brisoft Desk</em></h2>
+          <p>
+            Tudo o que você precisa saber sobre a plataforma que organiza seu atendimento no WhatsApp.
+          </p>
+        </div>
+        <div class="faq-list reveal">
+          <article class="faq-item">
+            <button type="button" class="faq-question" aria-expanded="false">
+              <span>Preciso deixar o celular conectado à internet ou na tomada o tempo todo?</span>
+              <span class="faq-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+              </span>
+            </button>
+            <div class="faq-answer">
+              <p>
+                Não! Após escanear o QR Code para conectar seu WhatsApp à plataforma, o Brisoft Desk roda 100% em nuvem de forma autônoma. Você e toda a sua equipe atendem direto pelo navegador web no computador, sem depender da bateria, do sinal de internet ou do aparelho celular físico estar ligado.
+              </p>
+            </div>
+          </article>
+
+          <article class="faq-item">
+            <button type="button" class="faq-question" aria-expanded="false">
+              <span>Posso conectar múltiplos números de WhatsApp e transferir entre setores?</span>
+              <span class="faq-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+              </span>
+            </button>
+            <div class="faq-answer">
+              <p>
+                Sim! Você pode conectar quantas contas de WhatsApp sua operação precisar. O Brisoft Desk permite organizar filas por departamentos coloridos (Comercial, Suporte, Financeiro, etc.) e transferir atendimentos entre setores ou atendentes com notas internas em apenas 1 clique.
+              </p>
+            </div>
+          </article>
+
+          <article class="faq-item">
+            <button type="button" class="faq-question" aria-expanded="false">
+              <span>O que é e como funciona o Painel TV (Gestão à Vista)?</span>
+              <span class="faq-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+              </span>
+            </button>
+            <div class="faq-answer">
+              <p>
+                O Painel TV é uma tela exclusiva em modo escuro desenvolvida para ser exibida em TVs ou monitores na parede da empresa. Ela mostra a fila em tempo real (quem está aguardando e em atendimento), métricas de TME e TMA, status dos atendentes e emite alertas sonoros quando novas mensagens chegam.
+              </p>
+            </div>
+          </article>
+
+          <article class="faq-item">
+            <button type="button" class="faq-question" aria-expanded="false">
+              <span>O que o Chatbot com triagem automática consegue fazer?</span>
+              <span class="faq-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+              </span>
+            </button>
+            <div class="faq-answer">
+              <p>
+                O bot solicita e valida o nome de clientes desconhecidos antes do atendimento, apresenta menu interativo de setores (reconhecendo números e nomes digitados), detecta palavras como "humano" ou "cancelar" e oferece retomada automática caso o cliente tenha sido atendido recentemente nas últimas 24h.
+              </p>
+            </div>
+          </article>
+
+          <article class="faq-item">
+            <button type="button" class="faq-question" aria-expanded="false">
+              <span>Como funciona a Pesquisa de Satisfação (Avaliações)?</span>
+              <span class="faq-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+              </span>
+            </button>
+            <div class="faq-answer">
+              <p>
+                Ao finalizar um chamado, o sistema envia automaticamente uma mensagem pelo WhatsApp solicitando uma nota de 1 a 5 estrelas. Os gestores acompanham o índice de satisfação (CSAT), as avaliações e os comentários detalhados na tela de Desempenho por equipe e atendente.
+              </p>
+            </div>
+          </article>
+
+          <article class="faq-item">
+            <button type="button" class="faq-question" aria-expanded="false">
+              <span>Quais ferramentas exclusivas o atendente tem direto no chat?</span>
+              <span class="faq-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+              </span>
+            </button>
+            <div class="faq-answer">
+              <p>
+                O Brisoft Desk possui uma barra lateral de ferramentas integrada: Bloco de Notas (com abas para anotações rápidas por chamado), Validador & Formatador de CPF/CNPJ (com cópia limpa em 1 clique) e Calculadora rápida, sem que o colaborador precise sair da tela do atendimento.
+              </p>
+            </div>
+          </article>
+
+          <article class="faq-item">
+            <button type="button" class="faq-question" aria-expanded="false">
+              <span>Como funciona o teste grátis de 7 dias e o cancelamento?</span>
+              <span class="faq-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+              </span>
+            </button>
+            <div class="faq-answer">
+              <p>
+                No plano Essencial, você experimenta a plataforma completa com sua equipe por 7 dias inteiramente grátis. Não há taxas de adesão nem multas rescisórias: você tem total liberdade para cancelar a qualquer momento sem burocracia.
+              </p>
+            </div>
+          </article>
+        </div>
+      </section>
+
       <section class="final-cta section-shell" id="contato">
         <div class="cta-panel reveal">
           <div>
@@ -789,7 +1132,7 @@
         <div>
           <h4>PRODUTO</h4>
           <a href="#produto">Brisoft Desk</a><a href="#recursos">Recursos</a
-          ><a href="#operacao">Indicadores</a>
+          ><a href="#operacao">Indicadores</a><a href="#faq">Dúvidas</a>
         </div>
         <div>
           <h4>OPERAÇÃO</h4>
@@ -799,12 +1142,7 @@
         <div>
           <h4>EMPRESA</h4>
           <a href="#contato">Contato</a
-          ><a
-            href="https://desk.brisoft.com.br/login"
-            target="_blank"
-            rel="noopener noreferrer"
-            >Entrar</a
-          >
+          ><a href="https://desk.brisoft.com.br/login">Entrar</a>
         </div>
       </div>
       <div class="footer-bottom section-shell">
@@ -813,6 +1151,23 @@
         >
       </div>
     </footer>
+
+    <!-- Botão Flutuante de WhatsApp -->
+    <a
+      href="https://wa.me/5500000000000?text=Ol%C3%A1%21%20Gostaria%20de%20saber%20mais%20sobre%20o%20Brisoft%20Desk."
+      class="whatsapp-float"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Falar pelo WhatsApp com a Brisoft"
+      title="Falar pelo WhatsApp"
+    >
+      <span class="whatsapp-pulse"></span>
+      <span class="whatsapp-tooltip">Falar no WhatsApp</span>
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2zm.01 1.67c2.2 0 4.26.86 5.82 2.42a8.18 8.18 0 0 1 2.41 5.82c0 4.54-3.7 8.24-8.24 8.24-1.44 0-2.85-.38-4.08-1.1l-.29-.17-3.03.8 0.81-2.95-.19-.3A8.16 8.16 0 0 1 3.8 11.91c0-4.54 3.7-8.24 8.25-8.24zm4.52 11.66c-.25-.13-1.47-.72-1.7-.81-.23-.08-.39-.13-.56.13-.17.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.13-1.06-.39-2.02-1.25-.75-.67-1.25-1.49-1.4-1.74-.14-.25-.02-.39.11-.51.11-.11.25-.29.37-.43.13-.15.17-.25.25-.42.08-.17.04-.32-.02-.45-.06-.13-.56-1.35-.77-1.85-.2-.49-.41-.42-.56-.43h-.48c-.17 0-.44.06-.67.31-.23.25-.88.86-.88 2.1 0 1.24.9 2.44 1.03 2.61.13.17 1.77 2.7 4.29 3.79.6.26 1.07.41 1.44.53.6.19 1.15.16 1.58.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.08.15-1.18-.06-.1-.23-.17-.48-.29z"/>
+      </svg>
+    </a>
+
     <script src="assets/js/script.js"></script>
   </body>
 </html>
