@@ -113,7 +113,7 @@ function updateCustomPlan() {
         .map((feature) => feature.dataset.customFeature)
         .join(", ") || "Sem funcionalidades adicionais";
     const subject = `Plano Personalizado Brisoft Desk - ${whatsapp} WhatsApp(s), ${departments} departamento(s), ${agents} atendente(s) - ${features}`;
-    customEmail.href = `mailto:contato@brisoft.com.br?subject=${encodeURIComponent(subject)}`;
+    customEmail.href = `mailto:brisoftdesk@gmail.com?subject=${encodeURIComponent(subject)}`;
   }
 }
 

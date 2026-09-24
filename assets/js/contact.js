@@ -1,6 +1,11 @@
 /**
- * Brisoft Desk - Lógica de Contato e Modal de Leads
- * Suporta o formulário na página dedicada (contato.html) e o modal interativo (index.html)
+ * Brisoft Desk - Lógica do Formulário da Página Dedicada (contato.html)
+ * Responsável por:
+ * - Máscara automática de telefone/WhatsApp: (XX) XXXXX-XXXX
+ * - Validação inline amigável de campos
+ * - Montagem da mensagem estruturada para a equipe comercial
+ * - Redirecionamento direto para o WhatsApp oficial (5583981131352)
+ * - Exibição de tela de sucesso rica com resumo dos dados enviados
  */
 
 (function () {
@@ -28,11 +33,10 @@
 
   function applyPhoneMask(input) {
     if (!input) return;
-    input.addEventListener("input", function (e) {
+    input.addEventListener("input", function () {
       const cursor = input.selectionStart;
       const prevLength = input.value.length;
       input.value = formatPhone(input.value);
-      // ajuste simples de posição do cursor
       const newLength = input.value.length;
       if (cursor && cursor === prevLength && newLength > prevLength) {
         input.setSelectionRange(newLength, newLength);
@@ -72,7 +76,7 @@
   function buildWhatsAppMessage(data) {
     const lines = [
       `👋 *Olá, equipe Brisoft Desk!*`,
-      `Gostaria de saber mais sobre a plataforma e solicitar uma demonstração:`,
+      `Gostaria de solicitar uma demonstração e atendimento para minha empresa:`,
       ``,
       `*DADOS DE CONTATO:*`,
       `👤 *Nome:* ${data.name || "Não informado"}`,
@@ -93,14 +97,24 @@
     return lines.join("\n");
   }
 
-  // Manipulador de envio de cada formulário
+  function escapeHtml(str) {
+    if (!str) return "";
+    return str
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;")
+      .replace(/'/g, "&#039;");
+  }
+
+  // Configuração do formulário de contato
   function setupContactForm(formElement) {
     if (!formElement) return;
 
     const phoneInput = formElement.querySelector('input[name="phone"]');
     applyPhoneMask(phoneInput);
 
-    // Validação inline ao sair do campo
+    // Validação inline ao sair do campo ou digitar
     formElement.querySelectorAll("input, select, textarea").forEach((field) => {
       field.addEventListener("blur", () => {
         if (field.value) validateField(field);
@@ -124,7 +138,7 @@
         }
       });
 
-      // Validação do checkbox de consentimento se existir
+      // Validação do checkbox de consentimento
       const consentBox = formElement.querySelector('input[name="consent"]');
       if (consentBox && !consentBox.checked) {
         hasErrors = true;
@@ -160,28 +174,27 @@
       const messageText = buildWhatsAppMessage(data);
       const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(messageText)}`;
 
-      // Simula feedback imediato de envio e mostra tela de sucesso
       setTimeout(() => {
         if (submitBtn) {
           submitBtn.classList.remove("loading");
           submitBtn.disabled = false;
         }
 
-        const container = formElement.closest(".contact-form-container, .contact-modal-body");
+        const container = formElement.closest(".contact-form-container");
         const successCard = container?.querySelector(".form-success-card");
 
         if (successCard) {
-          // Preenche os dados no resumo de sucesso
+          // Resumo dos dados enviados
           const summaryEl = successCard.querySelector(".success-data-summary");
           if (summaryEl) {
             summaryEl.innerHTML = `
               <div><strong>Nome:</strong> ${escapeHtml(data.name)} (${escapeHtml(data.company)})</div>
               <div><strong>WhatsApp:</strong> ${escapeHtml(data.phone)} | <strong>E-mail:</strong> ${escapeHtml(data.email)}</div>
-              ${data.agents ? `<div><strong>Operação:</strong> ${escapeHtml(data.agents)} atendente(s)</div>` : ""}
+              ${data.agents ? `<div><strong>Operação:</strong> ${escapeHtml(data.agents)} | ${escapeHtml(data.whatsapp_qty || "")}</div>` : ""}
             `;
           }
 
-          // Atualiza o link do botão de abrir o WhatsApp
+          // Link direto para o WhatsApp
           const waLink = successCard.querySelector(".btn-open-wa");
           if (waLink) {
             waLink.href = whatsappUrl;
@@ -189,22 +202,20 @@
 
           formElement.style.display = "none";
           successCard.style.display = "block";
+          successCard.scrollIntoView({ behavior: "smooth", block: "center" });
         }
 
-        // Tenta abrir o WhatsApp automaticamente em nova aba
+        // Abre o WhatsApp oficial em nova aba
         try {
-          const win = window.open(whatsappUrl, "_blank");
-          if (!win || win.closed || typeof win.closed === "undefined") {
-            // Se o navegador bloquear popup, o botão na tela de sucesso está pronto para o clique
-          }
+          window.open(whatsappUrl, "_blank");
         } catch (err) {
-          console.warn("Popup bloqueado:", err);
+          console.warn("Navegador bloqueou abertura automática:", err);
         }
-      }, 600);
+      }, 500);
     });
 
-    // Botão de reiniciar formulário na tela de sucesso
-    const container = formElement.closest(".contact-form-container, .contact-modal-body");
+    // Botão para resetar formulário
+    const container = formElement.closest(".contact-form-container");
     const resetBtn = container?.querySelector(".btn-reset-form");
     resetBtn?.addEventListener("click", () => {
       const successCard = container?.querySelector(".form-success-card");
@@ -219,98 +230,8 @@
     });
   }
 
-  function escapeHtml(str) {
-    if (!str) return "";
-    return str
-      .replace(/&/g, "&amp;")
-      .replace(/</g, "&lt;")
-      .replace(/>/g, "&gt;")
-      .replace(/"/g, "&quot;")
-      .replace(/'/g, "&#039;");
-  }
-
-  // --------------------------------------------------------------------------
-  // Controle do Modal de Contato
-  // --------------------------------------------------------------------------
-  const modalBackdrop = document.getElementById("contact-modal");
-  let lastActiveElement = null;
-
-  function openContactModal() {
-    if (!modalBackdrop) {
-      // Se não houver modal na página, redireciona suavemente para contato.html
-      window.location.href = "contato.html";
-      return;
-    }
-
-    lastActiveElement = document.activeElement;
-    modalBackdrop.classList.add("is-open");
-    modalBackdrop.setAttribute("aria-hidden", "false");
-    document.body.style.overflow = "hidden";
-
-    // Foco no primeiro campo após a animação
-    setTimeout(() => {
-      const firstInput = modalBackdrop.querySelector('input[name="name"]');
-      firstInput?.focus();
-    }, 200);
-  }
-
-  function closeContactModal() {
-    if (!modalBackdrop) return;
-    modalBackdrop.classList.remove("is-open");
-    modalBackdrop.setAttribute("aria-hidden", "true");
-    document.body.style.overflow = "";
-
-    if (lastActiveElement && typeof lastActiveElement.focus === "function") {
-      lastActiveElement.focus();
-    }
-  }
-
-  // Inicialização geral ao carregar a página
+  // Inicialização ao carregar a página
   document.addEventListener("DOMContentLoaded", () => {
-    // Inicializa formulários presentes no DOM
     document.querySelectorAll(".contact-form").forEach(setupContactForm);
-
-    // Conecta botões e links que abrem o modal
-    document.querySelectorAll("[data-open-contact-modal]").forEach((btn) => {
-      btn.addEventListener("click", (e) => {
-        // Se o usuário clicar com Ctrl / Cmd ou botão do meio, deixa abrir em nova aba
-        if (e.metaKey || e.ctrlKey || e.button === 1) return;
-        e.preventDefault();
-        openContactModal();
-      });
-    });
-
-    // Conecta botões que fecham o modal
-    document.querySelectorAll("[data-close-contact-modal]").forEach((btn) => {
-      btn.addEventListener("click", (e) => {
-        e.preventDefault();
-        closeContactModal();
-      });
-    });
-
-    // Fechar ao clicar fora do diálogo (no backdrop)
-    modalBackdrop?.addEventListener("click", (e) => {
-      if (e.target === modalBackdrop) {
-        closeContactModal();
-      }
-    });
-
-    // Fechar com tecla Escape
-    window.addEventListener("keydown", (e) => {
-      if (e.key === "Escape" && modalBackdrop?.classList.contains("is-open")) {
-        closeContactModal();
-      }
-    });
-
-    // Se a URL contiver o hash #contato-modal ou ?contato=abrir, abre direto
-    if (window.location.hash === "#contato-modal" || window.location.search.includes("contato=1")) {
-      setTimeout(openContactModal, 300);
-    }
   });
-
-  // Exporta para escopo global caso precise chamar manualmente
-  window.BrisoftContact = {
-    openModal: openContactModal,
-    closeModal: closeContactModal
-  };
 })();

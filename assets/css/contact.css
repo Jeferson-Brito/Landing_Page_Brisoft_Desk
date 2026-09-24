@@ -1,9 +1,8 @@
 /* ==========================================================================
-   Brisoft Desk - Estilos para Tela de Contato e Modal de Captação de Leads
+   Brisoft Desk - Estilos para Página Dedicada de Contato (contato.html)
    ========================================================================== */
 
 :root {
-  --modal-bg-glass: rgba(11, 29, 39, 0.72);
   --form-border: #d4e3dc;
   --form-focus: #087f52;
   --form-focus-glow: rgba(37, 185, 130, 0.22);
@@ -11,8 +10,207 @@
 }
 
 /* --------------------------------------------------------------------------
-   Estilos Globais do Formulário de Contato
+   Wrapper e Layout Geral da Página de Contato
    -------------------------------------------------------------------------- */
+.contact-page-wrapper {
+  background: linear-gradient(180deg, #f3f9f6 0%, #ffffff 480px);
+  padding: 36px 0 84px;
+  min-height: calc(100vh - 76px - 280px);
+}
+
+/* Grid de 2 Colunas */
+.contact-grid-layout {
+  display: grid;
+  grid-template-columns: 1fr 1.15fr;
+  gap: 56px;
+  align-items: start;
+}
+
+/* --------------------------------------------------------------------------
+   Coluna da Esquerda: Informações, Prova Social e Argumentos
+   -------------------------------------------------------------------------- */
+.contact-info-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.contact-hero-title {
+  font-size: clamp(30px, 3.4vw, 44px);
+  font-weight: 800;
+  line-height: 1.12;
+  letter-spacing: -0.04em;
+  color: #0b1d27;
+  margin: 10px 0 14px;
+}
+
+.contact-hero-title em {
+  font-style: normal;
+  color: var(--green);
+  position: relative;
+}
+
+.contact-hero-desc {
+  font-size: 15px;
+  line-height: 1.62;
+  color: #4a655c;
+  margin: 0;
+}
+
+/* Benefícios em Cards */
+.contact-benefits {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.benefit-item {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  padding: 16px 18px;
+  background: #ffffff;
+  border: 1px solid #e2ece7;
+  border-radius: 14px;
+  box-shadow: 0 4px 14px rgba(9, 44, 34, 0.03);
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.benefit-item:hover {
+  transform: translateX(4px);
+  border-color: #bcd9cd;
+}
+
+.benefit-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background: #e8f8f0;
+  color: var(--green);
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+}
+
+.benefit-icon svg {
+  width: 20px;
+  height: 20px;
+  fill: currentColor;
+}
+
+.benefit-content h4 {
+  margin: 0 0 4px;
+  font-size: 14px;
+  font-weight: 700;
+  color: #112c22;
+}
+
+.benefit-content p {
+  margin: 0;
+  font-size: 12.5px;
+  color: #587269;
+  line-height: 1.48;
+}
+
+/* Caixa de Canais Diretos (Dark Box) */
+.direct-channels-card {
+  padding: 22px 24px;
+  border-radius: 16px;
+  background: #0c2634;
+  color: #ffffff;
+  box-shadow: 0 14px 30px -8px rgba(10, 29, 43, 0.35);
+}
+
+.direct-channels-card h4 {
+  margin: 0 0 6px;
+  font-size: 14.5px;
+  font-weight: 700;
+  color: #74e2b4;
+  letter-spacing: 0.02em;
+}
+
+.direct-channels-card p {
+  margin: 0 0 16px;
+  font-size: 12px;
+  color: #a0bcb5;
+  line-height: 1.45;
+}
+
+.direct-channels-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.direct-channel-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 10px 14px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 9px;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.direct-channel-item:hover {
+  background: rgba(255, 255, 255, 0.16);
+  transform: translateX(3px);
+}
+
+.direct-channel-item svg {
+  width: 18px;
+  height: 18px;
+  fill: #60d9a3;
+  flex-shrink: 0;
+}
+
+/* --------------------------------------------------------------------------
+   Coluna da Direita: Formulário de Contato Completo
+   -------------------------------------------------------------------------- */
+.contact-form-container {
+  background: #ffffff;
+  border: 1px solid #dce8e3;
+  border-radius: 22px;
+  padding: 38px 40px;
+  box-shadow: 0 20px 50px -10px rgba(9, 42, 32, 0.08),
+              0 2px 10px rgba(9, 42, 32, 0.02);
+  position: relative;
+}
+
+.form-header-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 10.5px;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  color: var(--green);
+  background: #e6f7ef;
+  padding: 4px 10px;
+  border-radius: 999px;
+  margin-bottom: 12px;
+}
+
+.contact-form-container h3 {
+  font-size: 23px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: #0b1d27;
+  margin: 0 0 6px;
+}
+
+.contact-form-container > p {
+  font-size: 13.5px;
+  color: #556c64;
+  margin: 0 0 24px;
+  line-height: 1.5;
+}
+
+/* Formulário e Campos */
 .contact-form {
   display: flex;
   flex-direction: column;
@@ -141,7 +339,7 @@ textarea.form-control {
   padding-top: 12px;
 }
 
-/* Opções em Chips / Pills para Seleções Rápidas */
+/* Chips / Pills de seleção rápida */
 .chip-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
@@ -216,15 +414,15 @@ textarea.form-control {
   line-height: 1.45;
 }
 
-/* Botão de Envio do Formulário */
+/* Botão de Envio */
 .btn-submit-lead {
   width: 100%;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 12px;
-  padding: 15px 22px;
-  font-size: 14px;
+  padding: 16px 22px;
+  font-size: 14.5px;
   font-weight: 700;
   color: #ffffff;
   background: linear-gradient(135deg, #098e5c 0%, #066e46 100%);
@@ -278,7 +476,7 @@ textarea.form-control {
 }
 
 .form-privacy-note {
-  font-size: 11px;
+  font-size: 11.5px;
   color: #7b948c;
   text-align: center;
   margin-top: 4px;
@@ -289,23 +487,25 @@ textarea.form-control {
 }
 
 .form-privacy-note svg {
-  width: 13px;
-  height: 13px;
+  width: 14px;
+  height: 14px;
   fill: currentColor;
 }
 
-/* Estado de Sucesso */
+/* --------------------------------------------------------------------------
+   Estado de Sucesso do Formulário
+   -------------------------------------------------------------------------- */
 .form-success-card {
   display: none;
   text-align: center;
-  padding: 30px 20px;
+  padding: 24px 10px;
   animation: successScale 0.4s cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 
 @keyframes successScale {
   from {
     opacity: 0;
-    transform: scale(0.94);
+    transform: scale(0.95);
   }
   to {
     opacity: 1;
@@ -314,8 +514,8 @@ textarea.form-control {
 }
 
 .success-icon-wrap {
-  width: 68px;
-  height: 68px;
+  width: 72px;
+  height: 72px;
   border-radius: 50%;
   background: #e6f8ef;
   color: #087f52;
@@ -327,8 +527,8 @@ textarea.form-control {
 }
 
 .success-icon-wrap svg {
-  width: 34px;
-  height: 34px;
+  width: 36px;
+  height: 36px;
   fill: none;
   stroke: currentColor;
   stroke-width: 3;
@@ -345,7 +545,7 @@ textarea.form-control {
 
 .form-success-card p {
   color: #556c64;
-  font-size: 13.5px;
+  font-size: 14px;
   line-height: 1.55;
   margin: 0 auto 22px;
   max-width: 440px;
@@ -354,16 +554,16 @@ textarea.form-control {
 .success-data-summary {
   background: #f4f9f6;
   border: 1px solid #dbeae2;
-  border-radius: 10px;
-  padding: 14px 18px;
+  border-radius: 12px;
+  padding: 16px 20px;
   text-align: left;
-  font-size: 12px;
+  font-size: 12.5px;
   color: #3b554b;
   margin-bottom: 22px;
 }
 
 .success-data-summary div {
-  margin-bottom: 4px;
+  margin-bottom: 5px;
 }
 .success-data-summary div:last-child {
   margin-bottom: 0;
@@ -372,7 +572,7 @@ textarea.form-control {
 .success-actions {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 12px;
 }
 
 .btn-open-wa {
@@ -380,14 +580,14 @@ textarea.form-control {
   align-items: center;
   justify-content: center;
   gap: 10px;
-  padding: 14px 20px;
-  font-size: 13.5px;
+  padding: 15px 22px;
+  font-size: 14px;
   font-weight: 700;
   color: #fff;
   background: #25d366;
-  border-radius: 8px;
+  border-radius: 10px;
   text-decoration: none;
-  box-shadow: 0 6px 18px rgba(37, 211, 102, 0.4);
+  box-shadow: 0 8px 20px rgba(37, 211, 102, 0.4);
   transition: transform 0.2s ease, background 0.2s ease;
 }
 
@@ -397,8 +597,8 @@ textarea.form-control {
 }
 
 .btn-open-wa svg {
-  width: 20px;
-  height: 20px;
+  width: 22px;
+  height: 22px;
   fill: #fff;
 }
 
@@ -406,9 +606,9 @@ textarea.form-control {
   background: transparent;
   border: 1px solid #d2e2db;
   color: #4b665c;
-  padding: 10px 16px;
+  padding: 11px 18px;
   border-radius: 8px;
-  font-size: 12px;
+  font-size: 12.5px;
   font-weight: 600;
   cursor: pointer;
   transition: all 0.2s ease;
@@ -419,374 +619,21 @@ textarea.form-control {
   color: #193a2e;
 }
 
-
-/* --------------------------------------------------------------------------
-   Modal Interativo na Landing Page
-   -------------------------------------------------------------------------- */
-.contact-modal-backdrop {
-  position: fixed;
-  inset: 0;
-  background: var(--modal-bg-glass);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  z-index: 1000;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 20px 16px;
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.3s;
-}
-
-.contact-modal-backdrop.is-open {
-  opacity: 1;
-  visibility: visible;
-}
-
-.contact-modal-dialog {
-  background: #ffffff;
-  border-radius: 20px;
-  width: 100%;
-  max-width: 680px;
-  max-height: 92vh;
-  display: flex;
-  flex-direction: column;
-  overflow: hidden;
-  box-shadow: 0 25px 60px -15px rgba(3, 29, 21, 0.4),
-              0 0 0 1px rgba(220, 231, 228, 0.8);
-  transform: translateY(24px) scale(0.96);
-  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
-  position: relative;
-}
-
-.contact-modal-backdrop.is-open .contact-modal-dialog {
-  transform: translateY(0) scale(1);
-}
-
-.contact-modal-header {
-  padding: 22px 28px 16px;
-  background: linear-gradient(180deg, #f7fbf9 0%, #ffffff 100%);
-  border-bottom: 1px solid #edf4f1;
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  gap: 16px;
-  flex-shrink: 0;
-}
-
-.contact-modal-title-group .badge-lead {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  font-size: 10px;
-  font-weight: 800;
-  letter-spacing: 0.08em;
-  color: var(--green);
-  background: #e4f7ed;
-  padding: 3px 8px;
-  border-radius: 999px;
-  margin-bottom: 6px;
-}
-
-.contact-modal-title-group .badge-lead::before {
-  content: "";
-  display: inline-block;
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: #25b982;
-  box-shadow: 0 0 0 2px rgba(37, 185, 130, 0.3);
-}
-
-.contact-modal-title-group h2 {
-  font-size: 20px;
-  font-weight: 800;
-  color: #0b1d27;
-  margin: 0 0 4px;
-  letter-spacing: -0.02em;
-}
-
-.contact-modal-title-group p {
-  font-size: 12.5px;
-  color: #637972;
-  margin: 0;
-}
-
-.contact-modal-close {
-  background: #f0f6f3;
-  border: none;
-  width: 34px;
-  height: 34px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #556c64;
-  cursor: pointer;
-  flex-shrink: 0;
-  transition: background 0.18s, color 0.18s, transform 0.18s;
-}
-
-.contact-modal-close:hover {
-  background: #e2ede8;
-  color: #0b1d27;
-  transform: scale(1.08);
-}
-
-.contact-modal-close svg {
-  width: 18px;
-  height: 18px;
-  fill: none;
-  stroke: currentColor;
-  stroke-width: 2.2;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-}
-
-.contact-modal-body {
-  padding: 22px 28px 28px;
-  overflow-y: auto;
-  overscroll-behavior: contain;
-}
-
-.contact-modal-footer-note {
-  margin-top: 14px;
-  padding-top: 12px;
-  border-top: 1px dashed #e2ece7;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  font-size: 11.5px;
-  color: #6a827a;
-}
-
-.contact-modal-footer-note a {
-  color: var(--green);
-  text-decoration: underline;
-  font-weight: 600;
-}
-
-.contact-modal-footer-note a:hover {
-  color: var(--green-dark);
-}
-
-
-/* --------------------------------------------------------------------------
-   Estilos da Página Dedicada: contato.html
-   -------------------------------------------------------------------------- */
-.contact-page-wrapper {
-  background: linear-gradient(180deg, #f5fbf8 0%, #ffffff 420px);
-  padding: 44px 0 80px;
-  min-height: calc(100vh - 76px - 300px);
-}
-
-.contact-grid-layout {
-  display: grid;
-  grid-template-columns: 1fr 1.12fr;
-  gap: 54px;
-  align-items: start;
-}
-
-/* Coluna de Informações / Persuasão */
-.contact-info-panel {
-  display: flex;
-  flex-direction: column;
-  gap: 28px;
-}
-
-.contact-info-panel .eyebrow {
-  margin-bottom: 0;
-}
-
-.contact-hero-title {
-  font-size: clamp(30px, 3.2vw, 42px);
-  font-weight: 800;
-  line-height: 1.14;
-  letter-spacing: -0.04em;
-  color: #0b1d27;
-  margin: 0;
-}
-
-.contact-hero-title em {
-  font-style: normal;
-  color: var(--green);
-  position: relative;
-}
-
-.contact-hero-desc {
-  font-size: 15px;
-  line-height: 1.6;
-  color: #4b665c;
-  margin: 0;
-}
-
-/* Cards de Benefícios */
-.contact-benefits {
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-}
-
-.benefit-item {
-  display: flex;
-  gap: 14px;
-  align-items: flex-start;
-  padding: 14px 16px;
-  background: #ffffff;
-  border: 1px solid #e3ece8;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(9, 44, 34, 0.03);
-  transition: transform 0.2s ease, border-color 0.2s ease;
-}
-
-.benefit-item:hover {
-  transform: translateX(4px);
-  border-color: #bedacf;
-}
-
-.benefit-icon {
-  width: 36px;
-  height: 36px;
-  border-radius: 10px;
-  background: #eaf8f1;
-  color: var(--green);
-  display: grid;
-  place-items: center;
-  flex-shrink: 0;
-}
-
-.benefit-icon svg {
-  width: 19px;
-  height: 19px;
-  fill: currentColor;
-}
-
-.benefit-content h4 {
-  margin: 0 0 3px;
-  font-size: 13.5px;
-  font-weight: 700;
-  color: #122c22;
-}
-
-.benefit-content p {
-  margin: 0;
-  font-size: 12px;
-  color: #5d756d;
-  line-height: 1.45;
-}
-
-/* Caixa de Contato Direto */
-.direct-channels-card {
-  padding: 20px 22px;
-  border-radius: 14px;
-  background: #0d2836;
-  color: #ffffff;
-  box-shadow: 0 12px 28px -6px rgba(10, 29, 43, 0.35);
-}
-
-.direct-channels-card h4 {
-  margin: 0 0 6px;
-  font-size: 14px;
-  font-weight: 700;
-  color: #7ce2b8;
-  letter-spacing: 0.02em;
-}
-
-.direct-channels-card p {
-  margin: 0 0 16px;
-  font-size: 12px;
-  color: #a4beba;
-  line-height: 1.45;
-}
-
-.direct-channels-list {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.direct-channel-item {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  color: #ffffff;
-  text-decoration: none;
-  font-size: 12.5px;
-  font-weight: 600;
-  padding: 8px 12px;
-  background: rgba(255, 255, 255, 0.08);
-  border-radius: 8px;
-  transition: background 0.2s, transform 0.2s;
-}
-
-.direct-channel-item:hover {
-  background: rgba(255, 255, 255, 0.16);
-  transform: translateX(3px);
-}
-
-.direct-channel-item svg {
-  width: 17px;
-  height: 17px;
-  fill: #69d4a6;
-  flex-shrink: 0;
-}
-
-/* Coluna do Formulário na Página */
-.contact-form-container {
-  background: #ffffff;
-  border: 1px solid #dce8e3;
-  border-radius: 20px;
-  padding: 34px 36px;
-  box-shadow: 0 18px 45px -8px rgba(9, 42, 32, 0.08),
-              0 2px 8px rgba(9, 42, 32, 0.03);
-  position: relative;
-}
-
-.form-header-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  font-size: 10.5px;
-  font-weight: 800;
-  letter-spacing: 0.06em;
-  color: var(--green);
-  background: #e6f7ef;
-  padding: 4px 10px;
-  border-radius: 999px;
-  margin-bottom: 12px;
-}
-
-.contact-form-container h3 {
-  font-size: 22px;
-  font-weight: 800;
-  letter-spacing: -0.02em;
-  color: #0b1d27;
-  margin: 0 0 6px;
-}
-
-.contact-form-container > p {
-  font-size: 13px;
-  color: #556c64;
-  margin: 0 0 24px;
-}
-
-
 /* --------------------------------------------------------------------------
    Responsividade
    -------------------------------------------------------------------------- */
 @media (max-width: 960px) {
   .contact-grid-layout {
     grid-template-columns: 1fr;
-    gap: 38px;
+    gap: 40px;
   }
 
   .contact-page-wrapper {
-    padding: 30px 0 60px;
+    padding: 24px 0 60px;
   }
 
   .contact-form-container {
-    padding: 26px 22px;
+    padding: 28px 24px;
   }
 }
 
@@ -796,16 +643,13 @@ textarea.form-control {
     gap: 14px;
   }
 
-  .contact-modal-header {
-    padding: 18px 20px 14px;
+  .contact-form-container {
+    padding: 24px 18px;
+    border-radius: 16px;
   }
 
-  .contact-modal-body {
-    padding: 18px 20px 24px;
-  }
-
-  .contact-modal-title-group h2 {
-    font-size: 18px;
+  .contact-form-container h3 {
+    font-size: 20px;
   }
 
   .chip-grid {
@@ -813,7 +657,7 @@ textarea.form-control {
   }
 
   .btn-submit-lead {
-    font-size: 13.5px;
+    font-size: 14px;
     padding: 14px 18px;
   }
 }

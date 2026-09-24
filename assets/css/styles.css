@@ -103,7 +103,7 @@ a {
   text-decoration: none;
 }
 .brand img {
-  width: 132px;
+  width: 112px;
   height: auto;
   display: block;
 }
@@ -2417,7 +2417,7 @@ h2 em {
     padding: 0 16px;
   }
   .brand img {
-    width: 114px;
+    width: 96px;
   }
   .menu-toggle {
     display: flex;
